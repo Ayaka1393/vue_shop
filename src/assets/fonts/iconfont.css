@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1629449828958') format('truetype');
+  src: url('iconfont.ttf?t=1629534774256') format('truetype');
 }
 
 .iconfont {
@@ -15,7 +15,31 @@
   content: "\e89f";
 }
 
+.icon-users:before {
+  content: "\e8b8";
+}
+
+.icon-tijikongjian:before {
+  content: "\e8a0";
+}
+
+.icon-danju-tianchong:before {
+  content: "\e62a";
+}
+
 .icon-password:before {
   content: "\e734";
+}
+
+.icon-baobiao:before {
+  content: "\e604";
+}
+
+.icon-lock-fill:before {
+  content: "\e85f";
+}
+
+.icon-shangpinguanli:before {
+  content: "\e611";
 }
 
