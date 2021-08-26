@@ -7,6 +7,13 @@ import './assets/css/global.css'
 // 导入字体图标
 import './assets/fonts/iconfont.css'
 import TreeTable from 'vue-table-with-tree-grid'
+// 导入富文本编辑器
+import VueQuillEditor from 'vue-quill-editor'
+
+// 导入富文本编辑器所需的css文件
+import 'quill/dist/quill.core.css' // import styles
+import 'quill/dist/quill.snow.css' // for snow theme
+import 'quill/dist/quill.bubble.css' // for bubble theme
 
 // 导入axios，将其挂载到Vue的原型对象上
 import axios from 'axios'
@@ -23,6 +30,21 @@ Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
 Vue.component('tree-table', TreeTable)
+
+// 将富文本编辑器注册为全局可用的组件
+Vue.use(VueQuillEditor)
+
+// 创建时间格式化过滤器
+Vue.filter('dateFormat', function (originVal) {
+  const dt = new Date(originVal)
+  const y = dt.getFullYear()
+  const m = (dt.getMonth() + 1) < 10 ? '0' + (dt.getMonth() + 1) : '' + (dt.getMonth() + 1)
+  const d = dt.getDate() < 10 ? '0' + dt.getDate() : '' + dt.getDate()
+  const hh = dt.getHours() < 10 ? '0' + dt.getHours() : '' + dt.getHours()
+  const mm = dt.getMinutes() < 10 ? '0' + dt.getMinutes() : '' + dt.getMinutes()
+  const ss = dt.getSeconds() < 10 ? '0' + dt.getSeconds() : '' + dt.getSeconds()
+  return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+})
 
 new Vue({
   router,
