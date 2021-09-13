@@ -7,27 +7,14 @@
       </div>
       <!-- 登录表单区域 -->
       <!-- 使用element-ui中的组件，必须要先在../plugins/element.js中按需导入组件 -->
-      <el-form
-        label-width="0"
-        class="login_form"
-        :model="loginForm"
-        :rules="loginFormRules"
-        ref="loginFormRef"
-      >
+      <el-form label-width="0" class="login_form" :model="loginForm" :rules="loginFormRules" ref="loginFormRef">
         <!-- 用户名 -->
         <el-form-item prop="username">
-          <el-input
-            prefix-icon="iconfont icon-user"
-            v-model="loginForm.username"
-          ></el-input>
+          <el-input prefix-icon="iconfont icon-user" v-model="loginForm.username"></el-input>
         </el-form-item>
         <!-- 密码 -->
         <el-form-item prop="password">
-          <el-input
-            prefix-icon="iconfont icon-password"
-            v-model="loginForm.password"
-            show-password
-          ></el-input>
+          <el-input prefix-icon="iconfont icon-password" v-model="loginForm.password" show-password></el-input>
         </el-form-item>
         <!-- 按钮区域 -->
         <el-form-item class="btns">

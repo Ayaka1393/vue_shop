@@ -3,7 +3,6 @@
     <!-- 头部区 -->
     <el-header>
       <div>
-        <img src="../assets/heima.png" alt="" />
         <span>电商后台管理系统</span>
       </div>
       <el-button type="info" @click="logout" class="logout">退出</el-button>
@@ -15,22 +14,9 @@
         <div class="toggle-button" @click="toggleCollapse">|||</div>
         <!-- 侧边栏菜单区域 -->
         <!-- :router="true" 为整个侧边栏开启路由模式，路由地址默认对应的是index -->
-        <el-menu
-          background-color="#333744"
-          text-color="#fff"
-          active-text-color="#409BFF"
-          unique-opened
-          :collapse="isCollapse"
-          :collapse-transition="false"
-          :router="true"
-          :default-active="activePath"
-        >
+        <el-menu background-color="#333744" text-color="#fff" active-text-color="#409BFF" unique-opened :collapse="isCollapse" :collapse-transition="false" :router="true" :default-active="activePath">
           <!-- 一级菜单 -->
-          <el-submenu
-            :index="item.id + ''"
-            v-for="item in menulist"
-            :key="item.id"
-          >
+          <el-submenu :index="item.id + ''" v-for="item in menulist" :key="item.id">
             <!-- 一级菜单模板区域 -->
             <template slot="title">
               <!-- 图标 -->
@@ -40,12 +26,7 @@
             </template>
 
             <!-- 二级菜单 -->
-            <el-menu-item
-              :index="'/' + subItem.path"
-              v-for="subItem in item.children"
-              :key="subItem.id"
-              @click="saveNavState('/' + subItem.path)"
-            >
+            <el-menu-item :index="'/' + subItem.path" v-for="subItem in item.children" :key="subItem.id" @click="saveNavState('/' + subItem.path)">
               <template slot="title">
                 <!-- 图标 -->
                 <i class="el-icon-menu"></i>
